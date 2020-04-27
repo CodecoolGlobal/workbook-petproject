@@ -16,6 +16,10 @@ Tables:
     * Categories:
          * Python, Java Script, SQL
          * Computer Science etc...
+1. Module-category - table
+    * primary key   - id
+    * foreign key   - module_key
+                    - category_id
 1. Question - table
     * primary key   - id
     * foreign key   - module_id
