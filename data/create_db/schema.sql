@@ -14,6 +14,12 @@ CREATE TABLE categories (
     name        VARCHAR(200)        NOT NULL
 );
 
+CREATE TABLE module_categories (
+    id          INTEGER PRIMARY KEY NOT NULL,
+    category_id INTEGER             NOT NULL,
+    module_id   INTEGER             NOT NULL
+);
+
 CREATE TABLE question (
     id          INTEGER PRIMARY KEY NOT NULL,
     title       VARCHAR(200)        NOT NULL,
