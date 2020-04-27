@@ -16,8 +16,8 @@ CREATE TABLE categories (
 
 CREATE TABLE module_categories (
     id          INTEGER PRIMARY KEY NOT NULL,
-    category_id INTEGER             NOT NULL,
-    module_id   INTEGER             NOT NULL
+    module_id   INTEGER             NOT NULL,
+    category_id INTEGER             NOT NULL
 );
 
 CREATE TABLE question (
@@ -40,7 +40,7 @@ ALTER TABLE ONLY module_categories
 
 
 ALTER TABLE ONLY module_categories
-    ADD CONSTRAINT fk_module_categories_category_id FOREIGN KEY (module_id) REFERENCES categories(id);
+    ADD CONSTRAINT fk_module_categories_category_id FOREIGN KEY (category_id) REFERENCES categories(id);
 
 
 
