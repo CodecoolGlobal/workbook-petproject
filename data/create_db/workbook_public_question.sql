@@ -160,7 +160,7 @@ INSERT INTO question (id, title, module_id, category_id) VALUES (159, 'What is t
 INSERT INTO question (id, title, module_id, category_id) VALUES (160, 'How does HashMap work?', 3, 1);
 INSERT INTO question (id, title, module_id, category_id) VALUES (161, 'Why is it important for keys in a map to have an immutable type? (Consider String for example)', 3, 1);
 INSERT INTO question (id, title, module_id, category_id) VALUES (162, 'What is a garbage collector, in a nutshell?', 3, 18);
-INSERT INTO question (id, title, module_id, category_id) VALUES (163, 'What is casting? What is the difference between up vs downcasting?', 3, 3;
+INSERT INTO question (id, title, module_id, category_id) VALUES (163, 'What is casting? What is the difference between up vs downcasting?', 3, 3);
 INSERT INTO question (id, title, module_id, category_id) VALUES (164, 'Which order should we catch the exceptions? Why?', 3, 3);
 INSERT INTO question (id, title, module_id, category_id) VALUES (165, 'What is a class?', 3, 19);
 INSERT INTO question (id, title, module_id, category_id) VALUES (166, 'What is an object?', 3, 19);

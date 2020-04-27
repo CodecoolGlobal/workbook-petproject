@@ -22,7 +22,7 @@ CREATE TABLE module_categories (
 
 CREATE TABLE question (
     id          INTEGER PRIMARY KEY NOT NULL,
-    title       VARCHAR(200)        NOT NULL,
+    title       VARCHAR(300)        NOT NULL,
     module_id   INTEGER             NOT NULL,
     category_id INTEGER             NOT NULL
 );
@@ -35,6 +35,13 @@ CREATE TABLE answer (
     category_id INTEGER             NOT NULL,
     question_id INTEGER             NOT NULL
 );
+ALTER TABLE ONLY module_categories
+    ADD CONSTRAINT fk_module_categories_module_id FOREIGN KEY (module_id) REFERENCES module(id);
+
+
+ALTER TABLE ONLY module_categories
+    ADD CONSTRAINT fk_module_categories_category_id FOREIGN KEY (module_id) REFERENCES categories(id);
+
 
 
 ALTER TABLE ONLY question
