@@ -11,17 +11,18 @@ Tables:
         * Web
         * OOP
 1. Category - table
-    * primary key - id
-    * foreign key - category_id
+    * primary key   - id
+    * foreign key   - module_id
     * Categories:
          * Python, Java Script, SQL
          * Computer Science etc...
 1. Question - table
-    * primary key - id
-    * foreign key - category_key
+    * primary key   - id
+    * foreign key   - module_id
+                    - category_id
 1. Answer - table
-    * primary key - id
-    * foreign key - module_id,
-                  - category_key
-                  - question_key 
+    * primary key   - id
+    * foreign key   - module_id,
+                    - category_id
+                    - question_id
     

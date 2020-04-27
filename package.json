@@ -1,0 +1,87 @@
+{
+    "name": "api-wars",
+    "version": "0.0.1",
+    "description": "Example project o try out starwars API.",
+    "main": "index.html",
+    "private": true,
+    "license": "UNLICENSED",
+    "author": "",
+    "browserslist": [
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Edge versions",
+        "last 2 Safari versions",
+        "last 2 iOS major versions",
+        "last 2 ChromeAndroid versions"
+    ],
+    "eslintIgnore": [
+        "dest/*",
+        "node_modules/*"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": ""
+        }
+    },
+    "lint-staged": {
+        "*.{png,jpeg,jpg,gif,svg}": [
+            "imagemin-lint-staged"
+        ],
+        "*.{html,md,yml}": [
+            "prettier --write",
+            "git add"
+        ],
+        "*.{css, scss}": [
+            "stylelint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{js, jsx, json, ts, tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "all"
+    },
+    "scripts": {
+        "dev": "parcel serve ./index.html",
+        "build": "parcel build ./index.html",
+        "cleanup": "rm yarn.lock; rm package-lock.json; rm -rf node_modules",
+        "reboot": "npm run cleanup; npm install"
+    },
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "modern-css-reset": "^1.1.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-compat": "^3.5.1",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "eslint-plugin-unicorn": "^18.0.1",
+        "husky": "^4.2.3",
+        "imagemin-lint-staged": "^0.4.0",
+        "lint-staged": "^10.0.9",
+        "parcel-bundler": "^1.12.4",
+        "prettier": "2.0.2",
+        "stylelint": "^13.2.1",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-no-unsupported-browser-features": "^4.0.0",
+        "stylelint-order": "^4.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CodecoolGlobal/api-wars-magfabian.git"
+    }
+}
