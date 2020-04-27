@@ -11,8 +11,7 @@ CREATE TABLE module (
 
 CREATE TABLE categories (
     id          INTEGER PRIMARY KEY NOT NULL,
-    name        VARCHAR(200)        NOT NULL,
-    module_id   INTEGER             NOT NULL
+    name        VARCHAR(200)        NOT NULL
 );
 
 CREATE TABLE question (
