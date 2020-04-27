@@ -1,7 +1,7 @@
 # Workbook - Pet project (7th TW week)
 ##Web page that helps to study for PA
 ####Idea
-Create a web page that helps to study the questions form the interview work book. It will have two basic feature: 1. __Notebook Feature__: when you can save your answers to questions. 2. __The Test Feature__: user get a random question, and after answering it, the original answer will be shown that was previously saved in the notebook feature. In both features user is able to choose from categories and sub subjects.
+Create a web page that helps to study the questions form the interview work book. It will have two basic features: 1. __Notebook Feature__: User can save answers to questions to database. 2. __The Test Feature__: user get a random question, and after answering it, the original answer will be shown that was previously saved in the notebook feature. In both features user is able to choose from categories.
 ####Database
 Tables:
 1. Module - table
