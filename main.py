@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 import json
-app = Flask('codecool_series')
+app = Flask('workbook')
 
 
 @app.route('/')
