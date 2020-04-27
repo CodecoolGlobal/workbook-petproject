@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
-<h1>Welcome to our page!!</h1>
-</body>
-</html>
+{% extends "_layout.html" %}
+
+{% block page_title %}Welcome!{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block title %}Welcome to our page!{% endblock %}
+
+{% block content_header %}
+    <h2>Menu</h2>
+    <ul>
+        <li>
+            Take Notes!
+        </li>
+        <li>
+            Test
+        </li>
+    </ul>
+{% endblock %}
+{% block content_main %}{% endblock %}
+
