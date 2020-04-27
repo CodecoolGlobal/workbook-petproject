@@ -1,0 +1,2 @@
+INSERT INTO answer (id, answer, module_id, category_id, question_id) VALUES (1, 'The finally block always executes after normal termination of try block or after try block terminates due to some exception. "Finally" block is always executed after leaving the try statement. In case if some exception was not handled by except block, it is re-raised after execution of finally block.', 2, 8, 63);
+SELECT pg_catalog.setval('answer_id_seq', 1, TRUE);

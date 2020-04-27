@@ -21,6 +21,7 @@ CREATE TABLE question (
     category_id INTEGER             NOT NULL
 );
 
+
 CREATE TABLE answer (
     id          INTEGER PRIMARY KEY NOT NULL,
     answer      TEXT,
@@ -28,9 +29,6 @@ CREATE TABLE answer (
     category_id INTEGER             NOT NULL,
     question_id INTEGER             NOT NULL
 );
-
-ALTER TABLE ONLY categories
-    ADD CONSTRAINT fk_categories_module_id FOREIGN KEY (module_id) REFERENCES module(id);
 
 
 ALTER TABLE ONLY question
