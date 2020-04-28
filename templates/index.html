@@ -1,13 +1,21 @@
 {% extends "_layout.html" %}
 
-{% block page_title %}Workbook{% endblock %}
+{% block page_title %}
+    Workbook
+{% endblock %}
 
-{% block scripts %}{% endblock %}
+{% block scripts %}
+    <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/search_filter.js') }}"></script>
+{% endblock %}
 
-{% block title %}Workbook{% endblock %}
+{% block title %}
+    Workbook
+{% endblock %}
 
 {% block content_header %}
-    <h3 class="card__title">Modules:</h3>
+    <h3>Search by</h3>
+    <h4 class="card__title">Modules:</h4>
     <div class="card-container">
         {% for module in modules %}
             <div class="card__content" data-module="{{ module.id }}">
@@ -16,7 +24,7 @@
         {% endfor %}
     </div>
 
-    <h3 class="card__title">Categories:</h3>
+    <h4 class="card__title">Categories:</h4>
     <div class="card-container">
         {% for category in categories %}
             <div class="card__content" data-category="{{ category.id }}">
@@ -29,7 +37,7 @@
 
 
 {% block content_main %}
-
+<h3>Questions:</h3>
     {% for question in all_questions %}
 
         <div data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
