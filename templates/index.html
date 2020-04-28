@@ -4,20 +4,39 @@
 
 {% block scripts %}{% endblock %}
 
-{% block title %}Welcome to our page!{% endblock %}
+{% block title %}Workbook{% endblock %}
 
 {% block content_header %}
-    <h3>Choose from Moduls:</h3>
+    <h3 class="card__title">Modules:</h3>
+    <div class="card-container">
+        {% for module in modules %}
+            <div class="card__content" data-module="{{ module.id }}">
+                {{ module.name }}
+            </div>
+        {% endfor %}
+    </div>
 
-    <form action="">
-        <label for=""></label>
-        <select name="" id="">
-            <option value=""></option>
-        </select>
-    </form>
+    <h3 class="card__title">Categories:</h3>
+    <div class="card-container">
+        {% for category in categories %}
+            <div class="card__content" data-category="{{ category.id }}">
+                {{ category.name }}
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
 
 
-{% block content_main %}{% endblock %}
+{% block content_main %}
+
+    {% for question in all_questions %}
+
+        <div data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
+            <a href="/question/{{ question.id }}"><p>{{ question.title }}</p></a>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
 
