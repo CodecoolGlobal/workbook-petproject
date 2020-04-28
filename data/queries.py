@@ -21,3 +21,13 @@ def get_all_questions():
         FROM question
         ORDER BY question.id;''')
 
+
+def get_questions_by_modules(modules):
+    array = []
+    for module in modules:
+        array += data_manager.execute_select('''
+        SELECT *
+        FROM question
+        WHERE module_id = %(module)s
+        ''', {'module': module})
+    return array

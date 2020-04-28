@@ -18,6 +18,9 @@ def main_page():
 
 @app.route('/search-result', methods=['POST'])
 def search_result():
+    search_by = request.get_json()
+    search_result = queries.get_questions_by_modules(search_by)
+    print(search_result)
     return json.dumps(search_result)
 
 

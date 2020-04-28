@@ -38,13 +38,15 @@
 
 {% block content_main %}
 <h3>Questions:</h3>
-    {% for question in all_questions %}
 
-        <div data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
-            <a href="/question/{{ question.id }}"><p>{{ question.title }}</p></a>
-        </div>
+    <ol id="result-list">
+        {% for question in all_questions %}
+            <li data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
+                <a href="/question/{{ question.id }}"><p>{{ question.title }}</p></a>
+            </li>
+        {% endfor %}
+    </ol>
 
-    {% endfor %}
 
 {% endblock %}
 
