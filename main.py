@@ -18,7 +18,7 @@ def main_page():
 def search_result():
     search_by = request.get_json()
     result = queries.get_specific_questions(search_by)
-    return json.dumps(search_result)
+    return json.dumps(result)
 
 
 @app.route('/search-title', methods=['POST'])
