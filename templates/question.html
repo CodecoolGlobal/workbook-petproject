@@ -1,0 +1,31 @@
+{% extends "_layout.html" %}
+
+{% block page_title %}
+    Workbook
+{% endblock %}
+
+{% block scripts %}
+    <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/question.js') }}"></script>
+{% endblock %}
+{% block content_header %}
+    <h5>Question:</h5>
+    {% for data in question %}
+        <div class="question" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">{{ data.title }}</div>
+        <h5>Answer:</h5>
+        {% if data.answer %}
+            <div>{{ data.answer }}</div>
+        {% else %}
+            <div id="answer"><h3>404- not found</h3></div>
+            <button type="button" id="add-btn" class="add-btn">New Answer</button>
+        {% endif %}
+    {% endfor %}
+    <div class="container" id="container"></div>
+{% endblock %}
+
+
+{% block content_main %}
+
+
+{% endblock %}
+
