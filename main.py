@@ -14,7 +14,7 @@ def main_page():
     return render_template('index.html', modules=modules, categories=categories, all_questions=all_questions)
 
 
-@app.route('/search-result', methods=['POST'])
+@app.route('/filter-question', methods=['POST'])
 def search_result():
     search_by = request.get_json()
     result = queries.get_specific_questions(search_by)

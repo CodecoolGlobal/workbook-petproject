@@ -25,7 +25,7 @@ function collectIds() {
     })
     searchBy.module_id = moduleIds;
     searchBy.category_id = categoryIds;
-    postApi('/search-result', searchBy, renderData)
+    postApi('/filter-question', searchBy, renderData)
 }
 
 
