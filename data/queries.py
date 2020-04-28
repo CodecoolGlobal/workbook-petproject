@@ -22,12 +22,37 @@ def get_all_questions():
         ORDER BY question.id;''')
 
 
-def get_questions_by_modules(modules):
-    array = []
-    for module in modules:
-        array += data_manager.execute_select('''
+def get_question_by_title(raw_input):
+    title = '%' + raw_input + '%'
+    return data_manager.execute_select('''
         SELECT *
         FROM question
-        WHERE module_id = %(module)s
-        ''', {'module': module})
-    return array
+        WHERE question.title ILIKE %(title)s
+    ''', {'title': title})
+
+
+def get_specific_questions(dictionary):
+    modules = tuple(dictionary['module_id'])
+    categories = tuple(dictionary['category_id'])
+
+    if len(modules) == 0:
+        return data_manager.execute_select('''
+            SELECT *
+            FROM question
+            WHERE category_id IN %(categories)s
+        ''', {'categories': categories})
+
+    if len(categories) == 0:
+        return data_manager.execute_select('''
+            SELECT *
+            FROM question
+            WHERE module_id IN %(modules)s
+        ''', {'modules': modules})
+
+    else:
+        return data_manager.execute_select('''
+            SELECT *
+            FROM question
+            WHERE module_id IN %(modules)s AND category_id IN %(categories)s
+        ''', {'modules': modules,
+              'categories': categories})
