@@ -16,3 +16,7 @@
 .card__title {
     display: block;
 }
+
+.js-selected {
+    background-color: dodgerblue;
+}

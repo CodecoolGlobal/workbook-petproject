@@ -20,3 +20,4 @@ def get_all_questions():
         SELECT *
         FROM question
         ORDER BY question.id;''')
+

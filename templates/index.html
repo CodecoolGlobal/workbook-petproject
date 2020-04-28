@@ -18,7 +18,7 @@
     <h4 class="card__title">Modules:</h4>
     <div class="card-container">
         {% for module in modules %}
-            <div class="card__content" data-module="{{ module.id }}">
+            <div class="module card__content" data-module="{{ module.id }}">
                 {{ module.name }}
             </div>
         {% endfor %}
@@ -27,7 +27,7 @@
     <h4 class="card__title">Categories:</h4>
     <div class="card-container">
         {% for category in categories %}
-            <div class="card__content" data-category="{{ category.id }}">
+            <div class="category card__content" data-category="{{ category.id }}">
                 {{ category.name }}
             </div>
         {% endfor %}
