@@ -14,10 +14,10 @@
         <div class="question" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">{{ data.title }}</div>
         <h5>Answer:</h5>
         {% if data.answer %}
-            <div>{{ data.answer }}</div>
+            <div id="answer-is">{{ data.answer }}</div>
         {% else %}
-            <div id="answer"><h3>404- not found</h3></div>
-            <button type="button" id="add-btn" class="add-btn">New Answer</button>
+            <div id="answer-no"><h3>404- not found</h3></div>
+            <button type="button" id="add-btn" class="add-btn" onclick="newAnswer()">New Answer</button>
         {% endif %}
     {% endfor %}
     <div class="container" id="container"></div>

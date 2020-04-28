@@ -36,3 +36,19 @@ def get_question_by_id(id):
         FROM question
         LEFT JOIN answer on question.id = answer.question_id
         WHERE question.id = %(id)s''',{'id':id})
+
+
+def new_answer(answer_id, question_id, category_id, module_id, answer):
+    return data_manager.execute_dml_statement("""
+    INSERT INTO answer(id, answer, module_id, category_id, question_id)
+     VALUES (%(answer_id)s, %(answer)s, %(module_id)s, %(category_id)s, %(question_id)s)""",
+                                              {'answer_id': answer_id,
+                                               'answer': answer,
+                                               'module_id': module_id,
+                                               'category_id': category_id,
+                                               'question_id':question_id})
+
+
+def get_all_answer():
+    return data_manager.execute_select("""SELECT * FROM answer""")
+

@@ -11,8 +11,7 @@ export function getApi(url, callback) {
 export function postApi(url, data, callback) {
     // it is not called from outside
     // sends the data to the API, and calls callback function
-    data = JSON.parse(data);
-    console.log(data);
+
     fetch(url, {
       method: "POST",
       headers: { 'Accept': 'application/json',
@@ -23,5 +22,7 @@ export function postApi(url, data, callback) {
         .then(data => callback(data))
     ;
 }
+
+
 
 

@@ -27,10 +27,11 @@ def question_page(id):
     return render_template('question.html', question=question)
 
 
-@app.route('/save-new-answer')
+@app.route('/save-new-answer', methods=["POST"])
 def save_new_answer():
     new_answer = request.get_json()
-    print(new_answer)
+    util.new_answer(new_answer)
+    return new_answer
 
 
 @app.route('/search-result', methods=['POST'])
