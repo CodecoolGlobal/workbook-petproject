@@ -76,6 +76,7 @@ def test():
 @app.route('/random-question-module', methods=['POST'])
 def random_question_module():
     question_id = request.get_json()
+    print(question_id)
     question = queries.get_question_by_question_id(question_id)
     return json.dumps(question)
 

@@ -37,16 +37,17 @@ export function renderData(data) {
 }
 
 export function renderRandomQuestion(data) {
+    console.log(data)
     const randomQuestion = document.querySelector('#random-question');
     randomQuestion.innerHTML = '';
 
     data.forEach(item => {
         randomQuestion.innerHTML += `
+
             <h3>${item.question}</h3>
-            <small>Module: ${item.module}</small>
+            <small>Module: ${item.module}</small><br>
             <small>Category: ${item.category}</small>
-            <p class="hide">${item.answer}
-            <button id="show-answer">Show Answer</button>
+            <button data-questionid="${item.id}" type="button" id="show-answer-btn">Show Answer</button>
         `
     })
 }

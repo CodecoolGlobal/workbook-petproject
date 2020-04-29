@@ -18,3 +18,12 @@
     -webkit-appearance: none;
 }
 
+#random-question {
+    padding: 8px;
+    align-content: center;
+}
+
+ #show-answer-btn {
+     margin: 8px;
+     display: block;
+ }
