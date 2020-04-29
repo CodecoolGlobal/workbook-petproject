@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random question</title>
+    <script type="text/javascript" src="/static/js/random-question.js" defer></script>
+    <link rel="stylesheet" href="static/css/random-question.css">
+</head>
+<body>
+<button class="start-button" onclick="start()" id="start-button">START!</button>
+<div class="container" id="container">
+    <section class="question-container" id="question-container">
+    <div id="question" class="question">
+    </div>
+    </section>
+    <textarea class="text-field"></textarea>
+    <button class="check-button">Get the answer</button>
+    <button class="next-button" onclick="getNextQuestion()">Next question</button>
+</div>
+</body>
+</html>
