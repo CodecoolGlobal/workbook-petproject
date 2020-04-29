@@ -1,19 +1,11 @@
 import {postApi, getApi} from "./data_handler.js";
 
 window.newAnswer = function() {
-    const container = document.getElementById('container');
-    const childHTML =
-        `<div id="content" class="content"></div>`;
-    container.insertAdjacentHTML('beforeend', childHTML);
-
-
+    const article = document.getElementById('content-main');
     const textArea = `<textarea id="answer-textarea" placeholder="Your answer" required="required"></textarea>
                       <button id="submit-answer" type="submit">Submit</button>`;
-    const content = document.getElementById('content');
-    content.insertAdjacentHTML('beforeend', textArea);
-
-
-    const header = document.getElementById('content-header');
+    article.insertAdjacentHTML('beforeend', textArea);
+    const header = document.getElementById('new-answer');
     const answer = document.getElementById('answer-no');
     header.removeChild(answer);
     const addButton = document.getElementById('add-btn');
@@ -23,7 +15,7 @@ window.newAnswer = function() {
 };
 
 function sendData() {
-    const newAnswer = document.getElementById('answer').value;
+    const newAnswer = document.getElementById('answer-textarea').value;
     const question =document.getElementById('question');
     let data = {
         question_id : question.dataset.id,
@@ -37,14 +29,18 @@ function sendData() {
 
 function showNewAnswer(data) {
     console.log(data);
-    const header = document.getElementById('content');
-    const answer = document.getElementById('answer');
+    const article = document.getElementById('content-main');
+    const answer = document.getElementById('new-answer');
     console.log(answer);
-    header.removeChild(answer);
-    const submitButton = document.getElementById('submit-answer');
-    header.removeChild(submitButton);
-    const answerHTML = `<div id="answer-is"><h6>${data.answer}</h6><div`;
-    header.insertAdjacentHTML('beforeend', answerHTML)
+    const textarea = document.getElementById('answer-textarea');
+    const button = document.getElementById('submit-answer');
+    article.removeChild(button);
+    article.removeChild(textarea);
+    article.removeChild(answer);
+    const answerHTML = `<div id="answer-is" data-answer_id="${data.answer_id}"><p>${data.answer}</p><div`;
+    article.insertAdjacentHTML('beforeend', answerHTML);
+    const editButton = `<button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>`;
+    article.insertAdjacentHTML('beforeend',editButton)
 }
 
 window.editAnswer =  function () {
