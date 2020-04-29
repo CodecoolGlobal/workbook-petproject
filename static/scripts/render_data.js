@@ -40,7 +40,9 @@ export function renderAnswer(data) {
 
     if (data.length === 0) {
         modalBody.innerHTML = '';
-        modalBody.innerHTML += `<p>There is no answer yet! Go to Workbook, click on the question and save a new answer!</p>`
+        modalBody.innerHTML += `
+            <h4>There is no answer yet.</h4>
+            <p>Go to Workbook, click on the question and save a new answer!</p>`
     } else {
         modalBody.innerHTML = '';
         data.forEach(item => {
