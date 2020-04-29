@@ -106,3 +106,8 @@ def edit_answer(answer_id,answer):
     UPDATE answer
     SET answer = %(answer)s
     WHERE answer.id = %(answer_id)s""",{'answer_id':answer_id,'answer': answer})
+
+
+def get_test_questions():
+    return data_manager.execute_select("""
+    """)

@@ -50,7 +50,7 @@ function showNewAnswer(data) {
 window.editAnswer =  function () {
     const answer = document.getElementById('answer-is');
     answer.setAttribute('contenteditable','true');
-    const header = document.getElementById('content-header');
+    const header = document.getElementById('content-main');
     const editButton = document.getElementById('edit-button');
     header.removeChild(editButton);
     const buttonHTML = `<button id="edit-save-button" onclick="saveEditedAnswer()">Save edit</button>`;
@@ -61,7 +61,7 @@ window.saveEditedAnswer =  function () {
     console.log('hellobello');
     const answer = document.getElementById('answer-is');
     answer.removeAttribute('contenteditable');
-    const header = document.getElementById('content-header');
+    const header = document.getElementById('content-main');
     console.log(header);
     const saveButton = document.getElementById('edit-save-button');
     console.log(saveButton);
