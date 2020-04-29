@@ -54,32 +54,19 @@ def search_title():
     return json.dumps(result)
 
 
-@app.route('/random-question')
-def get_random_question():
-    return render_template('random-question.html')
+# @app.route('/search/<modules>/<categories>')
+# def search_by_modules_and_categories(modules, categories):
+#     new_modules = [str(s) for s in re.findall(r'-?\d+\.?\d*', modules)]
+#     if len(new_modules) == 0:
+#         new_modules = util.MODULS
+#     new_categories = [str(s) for s in re.findall(r'-?\d+\.?\d*', categories)]
+#     if len(new_categories) == 0:
+#         new_categories = util.CATEGORIES
+#     questions = queries.search_by_modules_and_categories(tuple(new_modules), tuple(new_categories))
+#     return json.dumps(questions)
 
 
-@app.route('/random-question-all')
-def get_random_questions_from_all():
-    questions = json.loads(json.dumps(queries.get_a_random_question()))
-    random_index = random.randint(0, (len(questions)) - 1)
-    question = questions[random_index]
-    return json.dumps(question)
-
-
-@app.route('/search/<modules>/<categories>')
-def search_by_modules_and_categories(modules, categories):
-    new_modules = [str(s) for s in re.findall(r'-?\d+\.?\d*', modules)]
-    if len(new_modules) == 0:
-        new_modules = util.MODULS
-    new_categories = [str(s) for s in re.findall(r'-?\d+\.?\d*', categories)]
-    if len(new_categories) == 0:
-        new_categories = util.CATEGORIES
-    questions = queries.search_by_modules_and_categories(tuple(new_modules), tuple(new_categories))
-    return json.dumps(questions)
-
-
-@app.route('/test')
+@app.route('/test', methods=['GET'])
 def test():
     modules = queries.get_all_modules()
     categories = queries.get_all_categories()

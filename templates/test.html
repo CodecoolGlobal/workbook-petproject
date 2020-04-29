@@ -1,7 +1,7 @@
 {% extends "_layout.html" %}
 
 {% block page_title %}
-    Workbook
+    Test
 {% endblock %}
 
 {% block scripts %}
@@ -11,12 +11,37 @@
 {% endblock %}
 
 {% block title %}
-    Workbook
+    Test
 {% endblock %}
 
 {% block content_header %}
-   <h1>Welcome, to the test, choose a module or a category, to start the test</h1>
+
+    <h2>Welcome to the test!</h2>
+    <p>Choose one from the modules or one from the categories and you get a random question!</p>
+
+    <form class="form-element" id="form-modul-select" method="post">
+        <label for="test-select-module"><h3>Select Module:</h3></label>
+        <select name="test-select-module" id="test-select-module">
+            {% for module in modules %}
+                <option value="{{ module.id }}">{{ module.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Select</button>
+    </form>
+
+    <form class="form-element" id="form-category-select" method="post">
+        <label for="test-select-category"><h3>Select Category:</h3></label>
+        <select name="test-select-category" id="test-select-category">
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Select</button>
+    </form>
+
 {% endblock %}
+
+{% set content_main_class = 'hide' %}
 {% block content_main %}
 {% endblock %}
 
