@@ -7,6 +7,7 @@
 {% block scripts %}
     <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
     <script defer type="module" src="{{ url_for('static', filename='scripts/test.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts//data_handler.js') }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -35,6 +36,16 @@
     <div  id="random-question">
     </div>
 
-    <button type="button">Next</button>
+    <div id ="modal-answer" class="card modal--answer hide">
+        <div class="display-block">
+            <button type="button" class="modal__close-button"><i class="fa fa-window-close"></i></button>
+        </div>
+        <div id="modal__body" class="display-block">
+
+        </div>
+    </div>
+    <div id="modal--overlay" class="modal--overlay hide">
+    </div>
+
 {% endblock %}
 

@@ -120,3 +120,11 @@ def get_question_by_question_id(question_id):
         INNER JOIN module m on question.module_id = m.id
         WHERE question.id = %(question_id)s;
     ''', {'question_id': question_id})
+
+
+def get_answer_by_question_id(question_id):
+    return data_manager.execute_select('''
+        SELECT answer.answer
+        FROM answer
+        WHERE question_id = %(question_id)s
+    ''', {'question_id': question_id})

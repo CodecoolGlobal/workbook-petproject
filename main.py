@@ -81,6 +81,12 @@ def random_question_module():
     return json.dumps(question)
 
 
+@app.route('/answer-by-question-id', methods=['POST'])
+def answer_by_question_id():
+    question_id = request.get_json()
+    answer = queries.get_answer_by_question_id(question_id)
+    return json.dumps(answer)
+
 def main():
     app.secret_key = os.urandom(12)
     app.run(debug=True)

@@ -1,3 +1,4 @@
+
 export function getApi(url, callback) {
 
     fetch(url, {
@@ -22,36 +23,3 @@ export function postApi(url, data, callback) {
         .then(data => callback(data))
     ;
 }
-
-export function renderData(data) {
-    console.log(data)
-    const resultList = document.querySelector('#result-list');
-
-    resultList.innerHTML = '';
-    data.forEach(item => {
-        resultList.innerHTML +=
-        `<li data-module="${item.module_id}" data-category="${item.category_id}">
-            <a href="/question/${item.id}">${item.title}</a>
-        </li>`
-    })
-}
-
-export function renderRandomQuestion(data) {
-    console.log(data)
-    const randomQuestion = document.querySelector('#random-question');
-    randomQuestion.innerHTML = '';
-
-    data.forEach(item => {
-        randomQuestion.innerHTML += `
-
-            <h3>${item.question}</h3>
-            <small>Module: ${item.module}</small><br>
-            <small>Category: ${item.category}</small>
-            <button data-questionid="${item.id}" type="button" id="show-answer-btn">Show Answer</button>
-        `
-    })
-}
-
-
-
-

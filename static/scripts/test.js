@@ -1,4 +1,6 @@
-import {postApi, renderRandomQuestion} from "./data_handler.js";
+import {postApi} from "./data_handler.js";
+import {renderData, showAnswer, renderRandomQuestion, renderAnswer} from "./render_data.js";
+
 
 const mainContent = document.querySelector('#content-main');
 const moduleForm = document.querySelector('#form-modul-select');
@@ -13,7 +15,7 @@ function moduleButtonEvent() {
 function handleModuleSearch() {
     let searchByModuleId;
     const moduleId = document.querySelector('#test-select-module').value;
-    console.log(moduleId);
+
     if (moduleId === '1') {
         searchByModuleId = chooseRandomNumber(1, 59);
     }
@@ -22,7 +24,6 @@ function handleModuleSearch() {
     } else {
         searchByModuleId = chooseRandomNumber(156, 280);
     }
-    console.log(searchByModuleId)
     mainContent.classList.remove('hide');
 
     postApi('/random-question-module', searchByModuleId, renderRandomQuestion)
