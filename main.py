@@ -83,6 +83,7 @@ def search_by_modules_and_categories(modules, categories):
 def test():
     modules = queries.get_all_modules()
     categories = queries.get_all_categories()
+    #just for push
     return render_template('test.html', modules=modules, categories=categories)
 
 
