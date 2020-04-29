@@ -7,6 +7,7 @@
 {% block scripts %}
     <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
     <script defer type="module" src="{{ url_for('static', filename='scripts/search_filter.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/title_search.js') }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -15,6 +16,12 @@
 
 {% block content_header %}
     <h3>Search by</h3>
+
+    <form id="title-search-form" method="post">
+        <label for="title-search-input"></label>
+        <input type="text" name="title-search-input" id="title-search-input">
+    </form>
+
     <h4 class="card__title">Modules:</h4>
     <div class="card-container">
         {% for module in modules %}
@@ -38,13 +45,15 @@
 
 {% block content_main %}
 <h3>Questions:</h3>
-    {% for question in all_questions %}
 
-        <div data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
-            <a href="/question/{{ question.id }}"><p>{{ question.title }}</p></a>
-        </div>
+    <ol id="result-list">
+        {% for question in all_questions %}
+            <li data-module="{{ question.module_id }}" data-category="{{ question.category_id }}">
+                <a href="/question/{{ question.id }}"><p>{{ question.title }}</p></a>
+            </li>
+        {% endfor %}
+    </ol>
 
-    {% endfor %}
 
 {% endblock %}
 

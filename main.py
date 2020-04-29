@@ -14,9 +14,7 @@ app = Flask('workbook')
 @app.route('/index', methods=['GET'])
 def main_page():
     modules = queries.get_all_modules()
-    print(modules)
     categories = queries.get_all_categories()
-    print(categories)
     all_questions = queries.get_all_questions()
     return render_template('index.html', modules=modules, categories=categories, all_questions=all_questions)
 
@@ -42,8 +40,18 @@ def save_edited_answer():
 
 
 @app.route('/search-result', methods=['POST'])
+@app.route('/filter-question', methods=['POST'])
 def search_result():
-    return json.dumps(search_result)
+    search_by = request.get_json()
+    result = queries.get_specific_questions(search_by)
+    return json.dumps(result)
+
+
+@app.route('/search-title', methods=['POST'])
+def search_title():
+    key_word = request.get_json()
+    result = queries.get_question_by_title(key_word)
+    return json.dumps(result)
 
 
 @app.route('/random-question')
