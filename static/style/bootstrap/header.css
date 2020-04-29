@@ -1,0 +1,37 @@
+header {
+    padding: 0 30px;
+}
+
+header > * {
+    display: inline-block;
+    float: left;
+}
+
+#header-logo {
+    width: 40px;
+    padding: 10px;
+}
+
+.header__logo {
+    display: flex;
+}
+
+.header__logo:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+#header-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 60px;
+
+    margin: 0;
+    padding: 0 6px;
+}
+
+#header-auth {
+    float: right;
+
+    margin: 15px;
+}

@@ -3,25 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block page_title %}{% endblock %}</title>
+
+    <!-- Normalize.css fixes lot of differences between browsers default styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
+
+    <!-- codecool series bootstrap-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/site.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/background.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bootstrap/utils.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/card_container.css') }}">
+
+    <!-- java script -->
     {% block scripts %}{% endblock %}
 </head>
 <body>
-    <h1>{% block title %}{% endblock %}</h1>
-    <nav>
-        <h2>Menu</h2>
-        <ul>
+<div id="body-wrapper">
+    <h1 id="title" class="title text-center">{% block title %}{% endblock %}</h1>
+    <nav class="">
+        <ul class="main-menu">
             <li>
-                <a href="/index">Workbook</a>
+                <a class="button" href="/index">Workbook</a>
             </li>
             <li>
-                <a href="/test">Test</a>
+                <a class="button" href="/test">Test</a>
             </li>
         </ul>
     </nav>
 
     <section>
-        <article id="content-header">
+        <article class="card" id="content-header">
             <!-- flash messages -->
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -38,10 +55,18 @@
         </article>
 
         <!-- main content, search results etc -->
-        <article id="content-main">
+        <article class="card" id="content-main">
             {% block content_main %}{% endblock %}
         </article>
     </section>
+    <footer>
+        MMNM's pet project
+    </footer>
+</div>
+<div class="background">
+    <div class="dark-blue-layer"></div>
+    <div class="light-blue-layer"></div>
+</div>
 
 </body>
 </html>

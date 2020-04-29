@@ -1,0 +1,11 @@
+    .detailed-view .poster {
+    max-width: 200px;
+}
+
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 200px;
+    }
+

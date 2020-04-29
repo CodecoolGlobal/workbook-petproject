@@ -18,5 +18,22 @@
 }
 
 .js-selected {
-    background-color: dodgerblue;
+    /*background-color: dodgerblue;*/
+    background-color: #11557C;
 }
+
+ .main-menu {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 30px;
+    overflow: hidden;
+}
+
+ .main-menu li {
+     float: left;
+ }
+
+ .main-menu li a {
+     display: block;
+     margin: 8px;
+ }

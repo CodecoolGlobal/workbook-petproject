@@ -1,0 +1,42 @@
+.title {
+    color: #fff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .3), 0 0 6px rgba(255, 255, 255, .2);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.small {
+    font-size: .75em;
+}
+
+.grayed {
+    color: #777;
+}
+
+.separator {
+    font-weight: 100;
+
+    padding: 0 5px;
+}
+
+.alert {
+    font-weight: bold;
+}
+
+.alert-warning {
+    color: rgb(37, 178, 137);
+}
+
+.alert-success {
+    color: #4c97ca;
+}
+
+.alert-error {
+    color: rgb(203, 75, 70);
+}
