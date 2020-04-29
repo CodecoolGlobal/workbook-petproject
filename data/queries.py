@@ -72,9 +72,10 @@ def get_specific_questions(dictionary):
 
 def search_by_modules_and_categories(modules, categories):
     return data_manager.execute_select('''
-    SELECT *
-    FROM question
-    WHERE module_id IN %(modules)s AND category_id IN %(categories)s''', {'modules': modules, 'categories': categories })
+        SELECT *
+        FROM question
+        WHERE module_id IN %(modules)s AND category_id IN %(categories)s
+        ''', {'modules': modules, 'categories': categories})
 
 
 def get_question_by_id(id):
