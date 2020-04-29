@@ -11,3 +11,9 @@ def new_answer(items):
     module_id = items['module_id']
     answer = items['answer']
     queries.new_answer(answer_id,question_id,category_id,module_id,answer)
+
+
+def save_edited_answer(edited_answer):
+    answer_id = edited_answer["answer_id"]
+    answer = edited_answer["answer"]
+    queries.edit_answer(answer_id, answer)

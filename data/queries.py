@@ -32,7 +32,7 @@ def search_by_modules_and_categories(modules, categories):
 def get_question_by_id(id):
     return data_manager.execute_select('''
         SELECT question.title , question.id AS id, question.category_id AS category_id, answer.answer AS answer,
-        question.module_id AS module_id
+        question.module_id AS module_id, answer.id as answer_id
         FROM question
         LEFT JOIN answer on question.id = answer.question_id
         WHERE question.id = %(id)s''',{'id':id})
@@ -52,3 +52,9 @@ def new_answer(answer_id, question_id, category_id, module_id, answer):
 def get_all_answer():
     return data_manager.execute_select("""SELECT * FROM answer""")
 
+
+def edit_answer(answer_id,answer):
+    return data_manager.execute_dml_statement("""
+    UPDATE answer
+    SET answer = %(answer)s
+    WHERE answer.id = %(answer_id)s""",{'answer_id':answer_id,'answer': answer})

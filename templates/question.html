@@ -14,10 +14,11 @@
         <div class="question" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">{{ data.title }}</div>
         <h5>Answer:</h5>
         {% if data.answer %}
-            <div id="answer-is">{{ data.answer }}</div>
+            <div id="answer-is" data-answer_id="{{ data.answer_id }}">{{ data.answer }}</div>
+            <button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>
         {% else %}
-            <div id="answer-no"><h3>404- not found</h3></div>
-            <button type="button" id="add-btn" class="add-btn" onclick="newAnswer()">New Answer</button>
+            <div id="answer-no"><h3>404- not found, you havent answerd it yet :/</h3></div>
+            <button type="button" id="add-btn" class="add-btn fas fa-cloud-upload-alt" onclick="newAnswer()"> New Answer</button>
         {% endif %}
     {% endfor %}
     <div class="container" id="container"></div>

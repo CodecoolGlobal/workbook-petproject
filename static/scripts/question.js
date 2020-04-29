@@ -1,6 +1,5 @@
 import {postApi, getApi} from "./data_handler.js";
 
-
 window.newAnswer = function() {
     const container = document.getElementById('container');
     const childHTML = `<div id="content" class="content"></div>`;
@@ -42,3 +41,39 @@ function showNewAnswer(data) {
     const answerHTML = `<div id="answer-is"><h6>${data.answer}</h6><div`;
     header.insertAdjacentHTML('beforeend', answerHTML)
 }
+
+window.editAnswer =  function () {
+    const answer = document.getElementById('answer-is');
+    answer.setAttribute('contenteditable','true');
+    const header = document.getElementById('content-header');
+    const editButton = document.getElementById('edit-button');
+    header.removeChild(editButton);
+    const buttonHTML = `<button id="edit-save-button" onclick="saveEditedAnswer()">Save edit</button>`;
+    header.insertAdjacentHTML('beforeend',buttonHTML)
+};
+
+window.saveEditedAnswer =  function () {
+    console.log('hellobello');
+    const answer = document.getElementById('answer-is');
+    answer.removeAttribute('contenteditable');
+    const header = document.getElementById('content-header');
+    console.log(header);
+    const saveButton = document.getElementById('edit-save-button');
+    console.log(saveButton);
+    header.removeChild(saveButton);
+    const buttonHTML = `<button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>`;
+    header.insertAdjacentHTML('beforeend', buttonHTML);
+    const answerId = answer.dataset.answer_id;
+    const new_answer = answer.textContent;
+    console.log(new_answer);
+    let data = {
+        answer_id : answerId,
+        answer : new_answer
+    };
+    postApi(`/edit-answer`, data, passCallback)
+};
+
+function passCallback(data) {
+    console.log(data)
+}
+

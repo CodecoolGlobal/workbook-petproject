@@ -34,6 +34,13 @@ def save_new_answer():
     return new_answer
 
 
+@app.route('/edit-answer', methods=["POST"])
+def save_edited_answer():
+    new_answer = request.get_json()
+    util.save_edited_answer(new_answer)
+    return new_answer
+
+
 @app.route('/search-result', methods=['POST'])
 def search_result():
     return json.dumps(search_result)
@@ -62,7 +69,6 @@ def search_by_modules_and_categories(modules, categories):
         new_categories = util.CATEGORIES
     questions = queries.search_by_modules_and_categories(tuple(new_modules), tuple(new_categories))
     return json.dumps(questions)
-
 
 
 def main():
