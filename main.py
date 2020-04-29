@@ -79,6 +79,13 @@ def search_by_modules_and_categories(modules, categories):
     return json.dumps(questions)
 
 
+@app.route('/test')
+def test():
+    modules = queries.get_all_modules()
+    categories = queries.get_all_categories()
+    return render_template('test.html', modules=modules, categories=categories)
+
+
 def main():
     app.secret_key = os.urandom(12)
     app.run(debug=True)

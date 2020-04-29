@@ -1,0 +1,22 @@
+{% extends "_layout.html" %}
+
+{% block page_title %}
+    Workbook
+{% endblock %}
+
+{% block scripts %}
+    <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/search_filter.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/title_search.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+    Workbook
+{% endblock %}
+
+{% block content_header %}
+   <h1>Welcome, to the test, choose a module or a category, to start the test</h1>
+{% endblock %}
+{% block content_main %}
+{% endblock %}
+
