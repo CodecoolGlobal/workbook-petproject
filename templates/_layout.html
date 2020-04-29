@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/question.css') }}">
 
     <!-- java script -->
+    <script src="https://randojs.com/1.0.0.js%22%3E"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
@@ -32,6 +33,9 @@
     <h1 id="title" class="title text-center">{% block title %}{% endblock %}</h1>
     <nav class="">
         <ul class="main-menu">
+            <li>
+                <a class="button" href="/index">Home</a>
+            </li>
             <li>
                 <a class="button" href="/index">Workbook</a>
             </li>

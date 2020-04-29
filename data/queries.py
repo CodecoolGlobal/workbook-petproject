@@ -106,3 +106,18 @@ def edit_answer(answer_id,answer):
     UPDATE answer
     SET answer = %(answer)s
     WHERE answer.id = %(answer_id)s""",{'answer_id':answer_id,'answer': answer})
+
+
+def get_question_by_question_id(question_id):
+    return data_manager.execute_select('''
+        SELECT
+            question.title AS question,
+            m.name AS module,
+            c.name AS category,
+            a.answer AS answer
+        FROM question
+        INNER JOIN categories c on question.category_id = c.id
+        INNER JOIN answer a on c.id = a.category_id
+        INNER JOIN module m on a.module_id = m.id
+        WHERE question.module_id = %(question_id)s;
+    ''', {'question_id': question_id})

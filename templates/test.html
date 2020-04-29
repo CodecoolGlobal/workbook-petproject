@@ -6,8 +6,7 @@
 
 {% block scripts %}
     <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
-    <script defer type="module" src="{{ url_for('static', filename='scripts/search_filter.js') }}"></script>
-    <script defer type="module" src="{{ url_for('static', filename='scripts/title_search.js') }}"></script>
+    <script defer type="module" src="{{ url_for('static', filename='scripts/test.js') }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -26,7 +25,7 @@
                 <option value="{{ module.id }}">{{ module.name }}</option>
             {% endfor %}
         </select>
-        <button type="submit">Select</button>
+        <button type="submit" id="select-module-btn">Select</button>
     </form>
 
     <form class="form-element" id="form-category-select" method="post">
@@ -43,5 +42,9 @@
 
 {% set content_main_class = 'hide' %}
 {% block content_main %}
+    <div id="random-question">
+    </div>
+
+    <button type="button">Next</button>
 {% endblock %}
 

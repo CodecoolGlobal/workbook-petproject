@@ -24,6 +24,7 @@ export function postApi(url, data, callback) {
 }
 
 export function renderData(data) {
+    console.log(data)
     const resultList = document.querySelector('#result-list');
 
     resultList.innerHTML = '';
@@ -32,6 +33,21 @@ export function renderData(data) {
         `<li data-module="${item.module_id}" data-category="${item.category_id}">
             <a href="/question/${item.id}">${item.title}</a>
         </li>`
+    })
+}
+
+export function renderRandomQuestion(data) {
+    const randomQuestion = document.querySelector('#random-question');
+    randomQuestion.innerHTML = '';
+
+    data.forEach(item => {
+        randomQuestion.innerHTML += `
+            <h3>${item.question}</h3>
+            <small>Module: ${item.module}</small>
+            <small>Category: ${item.category}</small>
+            <p class="hide">${item.answer}
+            <button id="show-answer">Show Answer</button>
+        `
     })
 }
 

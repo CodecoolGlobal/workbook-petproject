@@ -73,6 +73,13 @@ def test():
     return render_template('test.html', modules=modules, categories=categories)
 
 
+@app.route('/random-question-module', methods=['POST'])
+def random_question_module():
+    question_id = request.get_json()
+    question = queries.get_question_by_question_id(question_id)
+    return json.dumps(question)
+
+
 def main():
     app.secret_key = os.urandom(12)
     app.run(debug=True)
