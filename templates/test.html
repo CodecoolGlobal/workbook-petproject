@@ -16,7 +16,7 @@
 
 {% block content_header %}
 
-    <h2>Welcome to the test!</h2>
+    <h2>Hello Codecooler!</h2>
     <p>Choose one from the modules and get a random question!</p>
 
     <form class="form-element" id="form-modul-select" method="post">
@@ -33,16 +33,14 @@
 
 {% set content_main_class = 'hide' %}
 {% block content_main %}
-    <div  id="random-question">
-    </div>
+    <div  id="random-question"></div>
 
     <div id ="modal-answer" class="card modal--answer hide">
-        <div class="display-block">
-            <button type="button" class="button modal__close-button"><i class="fa fa-window-close"></i></button>
-        </div>
-        <div id="modal__body" class="display-block">
+        <button class="modal__close-button">
+            <i class="fa fa-window-close"></i>
+        </button>
 
-        </div>
+        <div id="modal__body" class="display-block"></div>
     </div>
     <div id="modal--overlay" class="modal--overlay hide">
     </div>
