@@ -3,6 +3,7 @@ button[type="submit"],
 .button,
 input[type="submit"],
 input[type="button"] {
+    cursor: pointer;
     margin: 10px;
     font-family: "Montserrat", sans-serif;
 
