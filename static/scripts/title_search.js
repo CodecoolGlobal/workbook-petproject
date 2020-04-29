@@ -1,4 +1,5 @@
-import {postApi, getApi, renderData} from "./data_handler.js";
+import {postApi, getApi} from "./data_handler.js";
+import {renderData, showAnswer, renderRandomQuestion, renderAnswer} from "./render_data.js";
 
 const searchForm = document.querySelector('#title-search-form');
 searchForm.addEventListener('submit', event => event.preventDefault());

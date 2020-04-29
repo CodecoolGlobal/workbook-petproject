@@ -15,10 +15,12 @@
 {% endblock %}
 
 {% block content_header %}
-    <h2>Search by</h2>
+    <h2>Filter Question</h2>
 
     <form id="title-search-form" method="post">
-        <label for="title-search-input"><h3>Live Search in Questions:</h3></label>
+        <label for="title-search-input">
+            <h3>Live Search in Questions:</h3>
+        </label>
         <input type="text" name="title-search-input" id="title-search-input">
     </form>
 
@@ -44,7 +46,7 @@
 
 
 {% block content_main %}
-<h4>Questions:</h4>
+<h2>Questions:</h2>
 
     <ol id="result-list">
         {% for question in all_questions %}
