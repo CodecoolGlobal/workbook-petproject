@@ -1,4 +1,5 @@
-button,
+button[type="button"],
+button[type="submit"],
 .button,
 input[type="submit"],
 input[type="button"] {
@@ -13,6 +14,11 @@ input[type="button"] {
     border-radius: 2px;
     background: rgba(0, 0, 0, 0);
 }
+
+button[type="button"]:hover,
+button[type="submit"]:hover,
+button[type="button"]:active,
+button[type="submit"]:active,
 button:hover,
 .button:hover,
 button:active,
@@ -62,3 +68,4 @@ header input[type="button"]:active {
     background: rgba(150, 150, 150, .25);
     text-shadow: 0 0 4px rgba(255, 255, 255, .5), 0 0 6px rgba(255, 255, 255, .3);
 }
+

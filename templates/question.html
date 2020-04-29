@@ -1,32 +1,49 @@
 {% extends "_layout.html" %}
 
 {% block page_title %}
-    Workbook
+    Edit Question
 {% endblock %}
 
 {% block scripts %}
     <script defer type="module" src="{{ url_for('static', filename='scripts/data_handler.js') }}"></script>
     <script defer type="module" src="{{ url_for('static', filename='scripts/question.js') }}"></script>
 {% endblock %}
+
+{% block title %}
+    Edit Question
+{% endblock %}
+
 {% block content_header %}
-    <h5>Question:</h5>
     {% for data in question %}
-        <div class="question" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">{{ data.title }}</div>
-        <h5>Answer:</h5>
-        {% if data.answer %}
-            <div id="answer-is" data-answer_id="{{ data.answer_id }}">{{ data.answer }}</div>
-            <button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>
-        {% else %}
-            <div id="answer-no"><h3>404- not found, you havent answerd it yet :/</h3></div>
-            <button type="button" id="add-btn" class="add-btn fas fa-cloud-upload-alt" onclick="newAnswer()"> New Answer</button>
-        {% endif %}
+        <div class="question text-center" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">
+            <h2>{{ data.title }}</h2>
+        </div>
     {% endfor %}
-    <div class="container" id="container"></div>
+
 {% endblock %}
 
 
 {% block content_main %}
 
+    <h2>Answer:</h2>
+    {% for data in question %}
+        {% if data.answer %}
+
+            <div id="answer-is" data-answer_id="{{ data.answer_id }}">{{ data.answer }}</div>
+            <button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>
+
+        {% else %}
+
+            <div class="new-answer">
+                <div id="answer-no"><p>404- not found, you haven't answered it yet :/</p></div>
+                <button type="button" id="add-btn" onclick="newAnswer()"> New Answer</button>
+            </div>
+
+        {% endif %}
+
+        <div class="container" id="container"></div>
+
+    {% endfor %}
 
 {% endblock %}
 

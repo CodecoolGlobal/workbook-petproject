@@ -1,0 +1,20 @@
+#answer-textarea {
+    display: block;
+    resize: none;
+    min-width: 500px;
+    min-height: 500px;
+    padding: 4px 6px;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    cursor: pointer;
+
+    border: 1px solid lightseagreen;
+    -webkit-border-radius: 0;
+            border-radius: 2px;
+    background: #fff;
+
+    -webkit-appearance: none;
+}
+

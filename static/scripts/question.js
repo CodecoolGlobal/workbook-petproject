@@ -2,12 +2,17 @@ import {postApi, getApi} from "./data_handler.js";
 
 window.newAnswer = function() {
     const container = document.getElementById('container');
-    const childHTML = `<div id="content" class="content"></div>`;
+    const childHTML =
+        `<div id="content" class="content"></div>`;
     container.insertAdjacentHTML('beforeend', childHTML);
-    const textArea = `<textarea id="answer" placeholder="Your answer" required="required"></textarea>
+
+
+    const textArea = `<textarea id="answer-textarea" placeholder="Your answer" required="required"></textarea>
                       <button id="submit-answer" type="submit">Submit</button>`;
     const content = document.getElementById('content');
     content.insertAdjacentHTML('beforeend', textArea);
+
+
     const header = document.getElementById('content-header');
     const answer = document.getElementById('answer-no');
     header.removeChild(answer);

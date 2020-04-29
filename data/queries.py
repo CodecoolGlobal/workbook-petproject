@@ -69,6 +69,7 @@ def get_specific_questions(dictionary):
     else:
         return get_questions_by_modules_categories(modules, categories)
 
+
 def search_by_modules_and_categories(modules, categories):
     return data_manager.execute_select('''
     SELECT *
