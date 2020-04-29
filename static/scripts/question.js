@@ -3,7 +3,7 @@ import {postApi, getApi} from "./data_handler.js";
 window.newAnswer = function() {
     const article = document.getElementById('content-main');
     const textArea = `<textarea id="answer-textarea" placeholder="Your answer" required="required"></textarea>
-                      <button id="submit-answer" type="submit">Submit</button>`;
+                      <button id="submit-answer" class="button" type="button">Submit</button>`;
     article.insertAdjacentHTML('beforeend', textArea);
     const header = document.getElementById('new-answer');
     const answer = document.getElementById('answer-no');
@@ -39,7 +39,7 @@ function showNewAnswer(data) {
     article.removeChild(answer);
     const answerHTML = `<div id="answer-is" data-answer_id="${data.answer_id}"><p>${data.answer}</p><div`;
     article.insertAdjacentHTML('beforeend', answerHTML);
-    const editButton = `<button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>`;
+    const editButton = `<button id="edit-button" class="button" type="button" onclick="editAnswer()">Edit</button>`;
     article.insertAdjacentHTML('beforeend',editButton)
 }
 
@@ -49,7 +49,7 @@ window.editAnswer =  function () {
     const header = document.getElementById('content-main');
     const editButton = document.getElementById('edit-button');
     header.removeChild(editButton);
-    const buttonHTML = `<button id="edit-save-button" onclick="saveEditedAnswer()">Save edit</button>`;
+    const buttonHTML = `<button id="edit-save-button" class="button" type="button" onclick="saveEditedAnswer()">Save edit</button>`;
     header.insertAdjacentHTML('beforeend',buttonHTML)
 };
 
@@ -62,7 +62,7 @@ window.saveEditedAnswer =  function () {
     const saveButton = document.getElementById('edit-save-button');
     console.log(saveButton);
     header.removeChild(saveButton);
-    const buttonHTML = `<button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>`;
+    const buttonHTML = `<button id="edit-button" type="button" class="button" onclick="editAnswer()">Edit</button>`;
     header.insertAdjacentHTML('beforeend', buttonHTML);
     const answerId = answer.dataset.answer_id;
     const new_answer = answer.textContent;

@@ -1,7 +1,7 @@
 {% extends "_layout.html" %}
 
 {% block page_title %}
-    Workbook
+    Questions
 {% endblock %}
 
 {% block scripts %}
@@ -19,7 +19,7 @@
 
     <form id="title-search-form" method="post">
         <label for="title-search-input">
-            <h3>Live Search in Questions:</h3>
+            <h3>Search in Questions:</h3>
         </label>
         <input type="text" name="title-search-input" id="title-search-input">
     </form>
@@ -41,7 +41,6 @@
             </div>
         {% endfor %}
     </div>
-
 {% endblock %}
 
 
@@ -55,7 +54,5 @@
             </li>
         {% endfor %}
     </ol>
-
-
 {% endblock %}
 

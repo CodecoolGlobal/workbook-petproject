@@ -33,6 +33,7 @@
 }
 
 #modal__body {
+    padding: 8
     border: coral solid 2px;
     border-radius: 10px;
 }

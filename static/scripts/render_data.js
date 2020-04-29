@@ -38,10 +38,15 @@ export function renderAnswer(data) {
     openModal();
     createCloseButton();
 
-    modalBody.innerHTML = '';
-    data.forEach(item => {
-        modalBody.innerHTML = `<p>${item.answer}</p>`
-    })
+    if (data.length === 0) {
+        modalBody.innerHTML = '';
+        modalBody.innerHTML += `<p>There is no answer yet! Go to Workbook, click on the question and save a new answer!</p>`
+    } else {
+        modalBody.innerHTML = '';
+        data.forEach(item => {
+        modalBody.innerHTML += `<p>${item.answer}</p>`
+        })
+    }
 }
 
 

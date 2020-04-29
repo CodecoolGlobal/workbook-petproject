@@ -18,9 +18,10 @@
     {% for data in question %}
         <div class="question text-center" id="question" data-id="{{ data.id }}" data-category="{{ data.category_id }}" data-module="{{ data.module_id }}">
             <h2>{{ data.title }}</h2>
+            <small><b>Module:</b> {{ data.module }}</small>
+            <small><b>Category:</b> {{ data.category }}</small>
         </div>
     {% endfor %}
-
 {% endblock %}
 
 
@@ -31,13 +32,13 @@
         {% if data.answer %}
 
             <div id="answer-is" data-answer_id="{{ data.answer_id }}">{{ data.answer }}</div>
-            <button id="edit-button" class="fas fa-edit" onclick="editAnswer()"></button>
+            <button class="button" type="button" id="edit-button" onclick="editAnswer()">Edit</button>
 
         {% else %}
 
             <div id="new-answer" class="new-answer">
                 <div id="answer-no"><p>404- not found, you haven't answered it yet :/</p></div>
-                <button type="button" id="add-btn" onclick="newAnswer()"> New Answer</button>
+                <button class="button" type="button" id="add-btn" onclick="newAnswer()"> New Answer</button>
             </div>
 
         {% endif %}

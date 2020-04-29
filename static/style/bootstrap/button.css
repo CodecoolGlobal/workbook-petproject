@@ -3,6 +3,7 @@ button[type="submit"],
 .button,
 input[type="submit"],
 input[type="button"] {
+    margin: 10px;
     font-family: "Montserrat", sans-serif;
 
     padding: 4px 12px;
@@ -68,4 +69,3 @@ header input[type="button"]:active {
     background: rgba(150, 150, 150, .25);
     text-shadow: 0 0 4px rgba(255, 255, 255, .5), 0 0 6px rgba(255, 255, 255, .3);
 }
-

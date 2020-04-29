@@ -79,11 +79,21 @@ def search_by_modules_and_categories(modules, categories):
 
 def get_question_by_id(id):
     return data_manager.execute_select('''
-        SELECT question.title , question.id AS id, question.category_id AS category_id, answer.answer AS answer,
-        question.module_id AS module_id, answer.id as answer_id
+        SELECT
+            question.id AS id,
+            question.title,
+            m.name AS module,
+            c.name AS category,
+            question.category_id AS category_id,
+            answer.answer AS answer,
+            question.module_id AS module_id,
+            answer.id AS answer_id
         FROM question
         LEFT JOIN answer on question.id = answer.question_id
-        WHERE question.id = %(id)s''',{'id':id})
+        INNER JOIN categories c on question.category_id = c.id
+        INNER JOIN module m on question.module_id = m.id
+        WHERE question.id = %(id)s
+        ''', {'id': id})
 
 
 def new_answer(answer_id, question_id, category_id, module_id, answer):
