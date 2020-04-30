@@ -3,7 +3,7 @@ import {postApi, getApi} from "./data_handler.js";
 window.newAnswer = function() {
     const article = document.getElementById('content-main');
     const textArea = `<textarea id="answer-textarea" placeholder="Your answer" required="required"></textarea>
-                      <button id="submit-answer" class="button" type="button">Submit</button>`;
+                      <button id="submit-answer" class="button" type="button">Save</button>`;
     article.insertAdjacentHTML('beforeend', textArea);
     const header = document.getElementById('new-answer');
     const answer = document.getElementById('answer-no');
